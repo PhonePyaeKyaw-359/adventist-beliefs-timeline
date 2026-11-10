@@ -1,1 +1,16 @@
 @import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  color: #12394d;
+  background: #cfeaf5;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
