@@ -16,10 +16,12 @@ export function useContent(contentKey) {
     let isCurrent = true
     const loadContent = contentLoaders[contentKey]
 
-    setState(getInitialState())
-
     if (!loadContent) {
-      setState({ status: 'error', data: null, error: new Error('Unknown content key') })
+      Promise.resolve().then(() => {
+        if (isCurrent) {
+          setState({ status: 'error', data: null, error: new Error('Unknown content key') })
+        }
+      })
       return () => {
         isCurrent = false
       }
