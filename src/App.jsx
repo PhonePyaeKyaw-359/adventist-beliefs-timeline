@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react'
 import { HashRouter, Link, Route, Routes } from 'react-router-dom'
 import Footer from './components/Footer.jsx'
 import Header from './components/Header.jsx'
+import BeliefDetailPage from './components/BeliefDetailPage.jsx'
 import StateMessage from './components/StateMessage.jsx'
 import { useContent } from './hooks/useContent.js'
 import { LanguageProvider } from './context/LanguageContext.jsx'
@@ -97,7 +98,7 @@ function HomePage() {
                   const topicForLabel = topicText.text
                   return <li key={belief.id} id={belief.id} className="scroll-mt-24"><article className="grid gap-4 rounded-2xl border border-slate-200 bg-[#fbfdfe] p-4 shadow-sm transition hover:border-sky-700/35 sm:grid-cols-[40px_minmax(0,1fr)_auto] sm:items-start sm:gap-5 sm:p-6 lg:p-7">
                     <span className="grid size-10 place-items-center rounded-full border border-sky-200 bg-[#eaf6fb] font-mono text-xs font-semibold text-sky-950">{belief.number}</span>
-                    <div><p className="text-xs font-semibold uppercase tracking-[0.14em] text-sky-800">{topicText.text}</p><h3 className="mt-1.5 text-xl font-semibold tracking-tight sm:text-2xl">{titleText.text}</h3><p className="mt-3 max-w-3xl leading-7 text-slate-600">{summaryText.text}</p>{language === 'th' && <p className="mt-2 text-xs font-medium text-slate-500">{messages.thaiTextPending}</p>}
+                    <div><p className="text-xs font-semibold uppercase tracking-[0.14em] text-sky-800">{topicText.text}</p><h3 className="mt-1.5 text-xl font-semibold tracking-tight sm:text-2xl"><Link className="rounded underline decoration-sky-300 decoration-2 underline-offset-4 hover:text-sky-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-700" to={`/belief/${belief.id}`}>{titleText.text}</Link></h3><p className="mt-3 max-w-3xl leading-7 text-slate-600">{summaryText.text}</p>{language === 'th' && <p className="mt-2 text-xs font-medium text-slate-500">{messages.thaiTextPending}</p>}
                       <details className="group mt-4 border-t border-slate-200 pt-3"><summary className="flex min-h-11 cursor-pointer list-none items-center justify-between gap-4 rounded-lg text-sm font-semibold text-sky-800 outline-none hover:text-sky-950 focus-visible:ring-2 focus-visible:ring-sky-700 focus-visible:ring-offset-2 [&::-webkit-details-marker]:hidden"><span>{messages.readOverview}</span><span aria-hidden="true" className="grid size-7 place-items-center rounded-full bg-sky-50 text-lg transition group-open:rotate-45">+</span></summary><div className="max-w-3xl pb-2 pt-2 text-sm leading-7 text-slate-600"><p>{detailText.text}</p><p className="mt-3 text-xs font-medium leading-5 text-slate-500"><span className="font-semibold text-slate-700">{messages.studyReferences}</span> {belief.references[language].join(' · ')}</p></div></details>
                     </div><button className="min-h-11 w-fit rounded-full border border-slate-300 px-4 py-2 text-sm font-semibold hover:border-sky-700 hover:text-sky-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-700 sm:mt-1" type="button" aria-pressed={isSaved} aria-label={(isSaved ? messages.removeSaved : messages.addSaved).replace('{topic}', topicForLabel)} onClick={() => toggleSaved(belief.id)}>{isSaved ? messages.saved : messages.saveTopic}</button>
                   </article></li>
@@ -127,7 +128,7 @@ function NotFoundPage() {
 }
 
 function App() {
-  return <LanguageProvider><HashRouter><div id="top" className="min-h-screen overflow-x-hidden bg-[#f2f7fa] text-[#172b3a] antialiased"><Header /><Routes><Route path="/" element={<HomePage />} /><Route path="/belief/:id" element={<GlossaryPage />} /><Route path="/about" element={<AboutPage />} /><Route path="/glossary" element={<GlossaryPage />} /><Route path="*" element={<NotFoundPage />} /></Routes><Footer /></div></HashRouter></LanguageProvider>
+  return <LanguageProvider><HashRouter><div id="top" className="min-h-screen overflow-x-hidden bg-[#f2f7fa] text-[#172b3a] antialiased"><Header /><Routes><Route path="/" element={<HomePage />} /><Route path="/belief/:id" element={<BeliefDetailPage />} /><Route path="/about" element={<AboutPage />} /><Route path="/glossary" element={<GlossaryPage />} /><Route path="*" element={<NotFoundPage />} /></Routes><Footer /></div></HashRouter></LanguageProvider>
 }
 
 export default App
