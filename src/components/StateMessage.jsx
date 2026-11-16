@@ -8,9 +8,10 @@ const messages = {
   notFound: { role: 'status', title: 'notFound', message: 'notFoundMessage' },
 }
 
-function StateMessage({ kind = 'empty', title, message, onRetry, homeLink }) {
+function StateMessage({ kind = 'empty', title, message, onRetry, homeLink, headingLevel = 1 }) {
   const { messages: locale } = useLanguage()
   const defaults = messages[kind] ?? messages.empty
+  const Heading = `h${headingLevel}`
 
   return (
     <section
@@ -18,9 +19,9 @@ function StateMessage({ kind = 'empty', title, message, onRetry, homeLink }) {
       role={defaults.role}
       aria-live={defaults.role === 'status' ? 'polite' : undefined}
     >
-      <h1 className="text-2xl font-semibold tracking-tight text-slate-900">
+      <Heading className="text-2xl font-semibold tracking-tight text-slate-900">
         {title ?? locale[defaults.title]}
-      </h1>
+      </Heading>
       <p className="mt-3 leading-7 text-slate-600">{message ?? locale[defaults.message]}</p>
       {onRetry && (
         <button

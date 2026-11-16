@@ -29,7 +29,7 @@ function BeliefDetailPage() {
         <StateMessage
           kind="notFound"
           homeLink={(
-            <Link className="mt-5 inline-flex min-h-11 items-center rounded-full bg-[#174e6b] px-5 py-2.5 text-sm font-semibold text-white hover:bg-[#103d55]" to="/">
+            <Link className="mt-5 inline-flex min-h-11 items-center rounded-full bg-[#174e6b] px-5 py-2.5 text-sm font-semibold text-white hover:bg-[#103d55] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-700" to="/">
               {messages.returnHome}
             </Link>
           )}
