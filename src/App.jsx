@@ -58,7 +58,7 @@ function HomePage() {
           </div>
           <aside className="rounded-[1.75rem] bg-gradient-to-br from-[#153e56] to-[#286b88] p-6 text-white shadow-xl sm:p-8 lg:p-9" aria-label={messages.fiveTopicsLabel}>
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#bfe8f5]">{messages.fiveSteps}</p>
-            <p className="mt-2 text-sm text-white/75">{messages.fiveStepsHint}</p>
+            <p className="mt-2 text-sm text-white/90">{messages.fiveStepsHint}</p>
             {status === 'success' && (
               <ol className="mt-5 space-y-1">
                 {beliefs.map((belief) => <li key={belief.id} className="flex items-center gap-3 rounded-xl px-2 py-2"><span className="grid size-7 place-items-center rounded-full border border-white/30 font-mono text-xs">{belief.number}</span><a className="text-white/90 underline-offset-4 hover:underline" href={`#${belief.id}`}>{getLocalizedText(belief.topic, language).text}</a></li>)}
@@ -75,9 +75,9 @@ function HomePage() {
               <p className="mt-4 max-w-xl leading-7 text-slate-600">{messages.timelineIntro}</p>
             </div>
 
-            {status === 'loading' && <StateMessage kind="loading" />}
-            {status === 'error' && <StateMessage kind="error" onRetry={retry} />}
-            {status === 'empty' && <StateMessage kind="empty" />}
+            {status === 'loading' && <StateMessage kind="loading" headingLevel={3} />}
+            {status === 'error' && <StateMessage kind="error" headingLevel={3} onRetry={retry} />}
+            {status === 'empty' && <StateMessage kind="empty" headingLevel={3} />}
 
             {status === 'success' && <>
               <div className="mt-8 grid gap-3 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-end sm:gap-4">
@@ -124,7 +124,7 @@ function GlossaryPage() {
 
 function NotFoundPage() {
   const { messages } = useLanguage()
-  return <main id="main-content" tabIndex="-1"><StateMessage kind="notFound" homeLink={<Link className="mt-5 inline-flex min-h-11 items-center rounded-full bg-[#174e6b] px-5 py-2.5 text-sm font-semibold text-white hover:bg-[#103d55]" to="/">{messages.returnHome}</Link>} /></main>
+  return <main id="main-content" tabIndex="-1"><StateMessage kind="notFound" homeLink={<Link className="mt-5 inline-flex min-h-11 items-center rounded-full bg-[#174e6b] px-5 py-2.5 text-sm font-semibold text-white hover:bg-[#103d55] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-700" to="/">{messages.returnHome}</Link>} /></main>
 }
 
 function App() {
