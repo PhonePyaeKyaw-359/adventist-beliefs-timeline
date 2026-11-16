@@ -28,7 +28,10 @@ The project partner and named knowledge-holder in our project report is Pastor A
 - Search the five topic titles and summaries.
 - Filter the timeline by topic.
 - Save topics and view the saved topics during the current visit. Saved topics are held in page state and are not stored after the page is refreshed.
-- Use the responsive navigation and Tailwind layout. The team is checking the page at 360 px and desktop size as part of Issue 3.
+- Open a detail page for each belief, with its overview, study references, and source material.
+- Search glossary entries linked to the related belief detail page.
+- Switch the interface and belief content between Thai and English. Thai belief text is a draft and awaits knowledge-holder review.
+- Use the responsive navigation and Tailwind layout. The team checks the page at 360 px and desktop size.
 
 ## Run the project
 
@@ -61,7 +64,13 @@ npm run preview  # Preview a production build locally
 .
 ├── index.html          # Browser document and page title
 ├── src/
-│   ├── App.jsx         # Page content, topic data, and interactions
+│   ├── App.jsx         # Routes and home page
+│   ├── components/     # Shared header, footer, belief detail, and glossary views
+│   ├── context/        # Thai/English language state
+│   ├── data/           # Belief and glossary content in JSON
+│   ├── hooks/          # Content loading hook
+│   ├── locales/        # Interface text for English and Thai
+│   ├── utils/          # Localized content and search helpers
 │   ├── index.css       # Tailwind CSS import
 │   └── main.jsx        # React application entry point
 ├── vite.config.js      # Vite, React, and Tailwind configuration
@@ -81,5 +90,5 @@ The five topics are based on materials supplied for this project. The summaries 
 
 - Check the wording with the named knowledge-holder.
 - Record the community and written sources, permissions, and credits in the project documentation.
-- Prepare and check the main content in Thai and English. The current prototype text is English; the Thai version is still to be completed.
+- Check the belief summaries and glossary entries with the named knowledge-holder. Thai belief text is currently a draft and awaits review; glossary entries do not yet have reviewed Thai text.
 - Avoid publishing personal, sacred, or sensitive material without permission.
