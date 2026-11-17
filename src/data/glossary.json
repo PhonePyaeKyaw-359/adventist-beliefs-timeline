@@ -1,0 +1,72 @@
+[
+  {
+    "id": "bible",
+    "term": { "en": "Bible" },
+    "definition": { "en": "The project materials introduce the Bible as the foundation Adventists use to understand their beliefs." },
+    "relatedBeliefId": "scripture",
+    "references": ["John 17:17", "Luke 24:27", "2 Timothy 3:16"],
+    "sources": ["03 - Fundamental Belief 1 - The Holy Scriptures.pptx"],
+    "reviewedByKnowledgeHolder": false,
+    "reviewDate": null
+  },
+  {
+    "id": "christ",
+    "term": { "en": "Jesus Christ" },
+    "definition": { "en": "The project materials describe Jesus' life, ministry, death, resurrection, ascension, and promised return." },
+    "relatedBeliefId": "christ",
+    "references": ["Hebrews 4:15", "John 14:6"],
+    "sources": ["Class Jesus Christ.pdf"],
+    "reviewedByKnowledgeHolder": false,
+    "reviewDate": null
+  },
+  {
+    "id": "creation",
+    "term": { "en": "Creation" },
+    "definition": { "en": "The supplied lessons follow the Genesis creation account, including the creation of humanity." },
+    "relatedBeliefId": "creation",
+    "references": ["Genesis 1–2"],
+    "sources": ["Creation2.pptx"],
+    "reviewedByKnowledgeHolder": false,
+    "reviewDate": null
+  },
+  {
+    "id": "sabbath",
+    "term": { "en": "Sabbath" },
+    "definition": { "en": "The supplied lessons include the seventh-day Sabbath in the creation account and describe it as God's gift." },
+    "relatedBeliefId": "creation",
+    "references": ["Genesis 1–2"],
+    "sources": ["Creation2.pptx"],
+    "reviewedByKnowledgeHolder": false,
+    "reviewDate": null
+  },
+  {
+    "id": "great-controversy",
+    "term": { "en": "Great Controversy" },
+    "definition": { "en": "This belief uses a biblical story of conflict between good and evil to explain why suffering exists." },
+    "relatedBeliefId": "great-controversy",
+    "references": ["Genesis 3", "Revelation 12:12, 17"],
+    "sources": ["08 - The great controversy.pptx"],
+    "reviewedByKnowledgeHolder": false,
+    "reviewDate": null
+  },
+  {
+    "id": "death",
+    "term": { "en": "Death" },
+    "definition": { "en": "The supplied Fundamental Belief 26 lesson presents death as a sleep." },
+    "relatedBeliefId": "resurrection",
+    "references": ["John 11:11–14"],
+    "sources": ["FB 26 - Death and ressurrection.pptx"],
+    "reviewedByKnowledgeHolder": false,
+    "reviewDate": null
+  },
+  {
+    "id": "resurrection",
+    "term": { "en": "Resurrection" },
+    "definition": { "en": "The lesson points to the resurrection at Jesus' return as the Christian hope." },
+    "relatedBeliefId": "resurrection",
+    "references": ["1 Thessalonians 4:16", "1 Corinthians 15:51–53"],
+    "sources": ["FB 26 - Death and ressurrection.pptx"],
+    "reviewedByKnowledgeHolder": false,
+    "reviewDate": null
+  }
+]

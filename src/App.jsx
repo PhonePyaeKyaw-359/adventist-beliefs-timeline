@@ -3,6 +3,7 @@ import { HashRouter, Link, Route, Routes } from 'react-router-dom'
 import Footer from './components/Footer.jsx'
 import Header from './components/Header.jsx'
 import BeliefDetailPage from './components/BeliefDetailPage.jsx'
+import GlossaryPage from './components/GlossaryPage.jsx'
 import StateMessage from './components/StateMessage.jsx'
 import { useContent } from './hooks/useContent.js'
 import { LanguageProvider } from './context/LanguageContext.jsx'
@@ -116,10 +117,6 @@ function HomePage() {
 function AboutPage() {
   const { messages } = useLanguage()
   return <main id="main-content" tabIndex="-1" className="mx-auto min-h-[60vh] max-w-4xl px-4 py-12 sm:px-6 sm:py-16"><p className="text-xs font-semibold uppercase tracking-[0.2em] text-sky-800">{messages.projectGuide}</p><h1 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">{messages.aboutTitle}</h1><p className="mt-5 max-w-3xl leading-7 text-slate-600">{messages.aboutDescription}</p><Link className="mt-6 inline-flex min-h-11 items-center rounded-full bg-[#174e6b] px-5 py-2.5 text-sm font-semibold text-white hover:bg-[#103d55] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-700" to="/">{messages.backToBeliefs}</Link></main>
-}
-
-function GlossaryPage() {
-  return <main id="main-content" tabIndex="-1"><StateMessage kind="info" /></main>
 }
 
 function NotFoundPage() {

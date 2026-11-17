@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 
 const contentLoaders = {
   beliefs: () => import('../data/beliefs.json').then((module) => module.default),
+  glossary: () => import('../data/glossary.json').then((module) => module.default),
 }
 
 function getInitialState() {
